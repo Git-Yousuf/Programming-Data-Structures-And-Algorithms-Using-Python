@@ -5,7 +5,6 @@
 # Valid Algorithm:
 # 1. Finite presentation of the steps
 # 2. Terminates after a finite number of steps
-# 3. 
 
 # GCD - Greatest Common Division
 
@@ -39,28 +38,39 @@ def gcd(m,n):
     return(cf[-1])
 
 print(gcd(12,18))
-    
-# Algorithm for gcd(m,n)
-# Use fm, fn for list of factors of m, n, respectively
-# For each i from 1 to m, add i to fm if i divides m
-# For each j from 1 to n, add j to fn if j divides n
-# Use cf for list of common factors
-# For each f in fm, add f to cf if f also appears in fn
-# Return largest (rightmost) value in cf
 
-# Important Poimts
-#1. Use names to remember intermediate values - m, n, fm, fn, cf, i, j, f
+''' 
+Algorithm for gcd(m,n):
 
-#2. Values can be single items or collections
-#       - m, n, i, j, f are single numbers
-#       - fm, fn, cf are lists of numbers
+1. Use fm, fn for list of factors of m, n, respectively
 
-#3. Assign values to names: Explicitly, fn = [], and implicitly, for f in cf:
+2. For each i from 1 to m, add i to fm if i divides m
 
-#4. Update them, fn.append(i)
+3. For each j from 1 to n, add j to fn if j divides n
 
-#5. Program is a sequence of steps
+4. Use cf for list of common factors
 
-#6. Some steps are repeated - Do the same thing for each item in a list
+5. For each f in fm, add f to cf if f also appears in fn
 
-#7. Some steps are executed conditionally - Do something if a value meets some requirement
+6. Return largest (rightmost) value in cf
+'''
+
+'''
+Important Poimts:
+
+1. Use names to remember intermediate values - m, n, fm, fn, cf, i, j, f
+
+2. Values can be single items or collections
+      - m, n, i, j, f are single numbers
+      - fm, fn, cf are lists of numbers
+
+3. Assign values to names: Explicitly, fn = [], and implicitly, for f in cf:
+
+4. Update them, fn.append(i)
+
+5. Program is a sequence of steps
+
+6. Some steps are repeated - Do the same thing for each item in a list
+
+7. Some steps are executed conditionally - Do something if a value meets some requirement
+'''
