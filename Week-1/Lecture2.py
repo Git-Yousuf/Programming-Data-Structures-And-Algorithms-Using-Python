@@ -1,7 +1,10 @@
 '''
 Can we do better?
 
-We scan from 1 to m to compute fm and again from 1 to n to compute fn
+    We scan from 1 to m to compute fm and again from 1 to n to compute fn. 
+
+    Problem: Computer works 3 times. First to compute fm, second to compute fn, 
+    and third to compare the two lists to compute cf.
 
 Why not a single scan from 1 to max(m,n)?
 
@@ -22,6 +25,23 @@ Even better?
         For each i in 1 to min(m,n), if i divides m and i
         also divides n, then add i to cf    
 
+        Ex: Can 18 be a factor of 12?
+            No.
+
+            Can 17 be factor of 12?
+            No.
+
+            Can 15 be factor of 12?
+            No.
+
+            So after 12 everything is waste.
+
+i.e, A common factor cannot be greater than the smaller number. !!!
+
+Suppose m = 12 and n = 18
+
+Largest possible common factor would be 12 which is m here.
+
 '''
 
 # A shorter Python program
@@ -41,7 +61,7 @@ print(gcd(12,18))
 
 Do we need lists at all?
 
-    We only need the largest common factor
+    We only need the largest common factor Not list. So why store list, Waste of memory.
 
     1 will always be a common factor
 
@@ -49,7 +69,9 @@ Do we need lists at all?
     the previous one
 
     Remember the largest common factor seen so far
-    and return it
+    and return it.
+
+    Hence No list. Only one variable.
 
     mrcf — most recent common factor
 
@@ -120,6 +142,10 @@ Summary
 
     Though the newer versions are simpler, they still
     take time proportional to the values m and n
+
+    Even this backward scanning algorithm is not the fastest. 
+    Worst case, if you call: gcd(99991, 99989) it may still 
+    check almost every number from 99989 down to 1.
 
     A much more efficient approach is possible
 

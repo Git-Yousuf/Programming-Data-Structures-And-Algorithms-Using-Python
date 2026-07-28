@@ -1,5 +1,7 @@
 # Algorithm - how to systematically perform a task
+
 # Programming Languages are used to describe the steps
+
 # Step means degrees of details. Eg: "Arrange the chairs" vs "Make 8 rows with 10 chairs in each row"
 
 # Valid Algorithm:
@@ -9,6 +11,46 @@
 # GCD - Greatest Common Division
 
 # First Python Program - Computing gcd
+
+'''
+
+m = 12
+n = 18
+
+        ↓
+
+Find factors of 12
+
+[1,2,3,4,6,12]
+
+        ↓
+
+Find factors of 18
+
+[1,2,3,6,9,18]
+
+        ↓
+
+Compare both lists
+
+Common factors
+
+[1,2,3,6]
+
+        ↓
+
+Take last element
+
+6
+
+        ↓
+
+Output
+
+GCD = 6
+
+'''
+
 def gcd(m,n):
     # List out the factors of m
     
@@ -18,20 +60,31 @@ def gcd(m,n):
     # 3. Likewise for n
     
     fm=[]
+
+    #        range(1,13)
     for i in range(1,m+1):
+        #   12%i==0
         if (m%i)==0:
             fm.append(i)
             
     # List out the factors of n
     
     fn=[]
+
+    #        range(1,19)
     for j in range(1,n+1):
+        #  18%j==0
         if (n%j)==0:
             fn.append(j)
      
      # Report the largest number that appears on both lists  
           
+
+    # fm = [1, 2, 3, 4, 6, 12]
+    # fn = [1, 2, 3, 6, 9, 18]
+    
     cf=[]
+
     for f in fm:
         if f in fn:
             cf.append(f)
@@ -73,4 +126,16 @@ Important Poimts:
 6. Some steps are repeated - Do the same thing for each item in a list
 
 7. Some steps are executed conditionally - Do something if a value meets some requirement
+'''
+
+'''
+
+Time Complexity:
+
+Factors of m find panna → O(m)
+Factors of n find panna → O(n)
+Common factors → O(m × n) Worst Case
+
+So this is a basic or brute force approach. We can do better than this. We can use Euclid's algorithm to find gcd(m,n) in O(log(n)) time.
+
 '''

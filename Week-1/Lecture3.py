@@ -24,6 +24,8 @@ gcd(20,12) = 4
 20 = 5 * 4
 12 = 3 * 4
 
+<!-- m=20, n=12 m-n = 20-12 = 8. Here d divdes m, d divides n, and d divides m-n as well. -->
+
 where  m=20, n=12, d=4, a=5, b=3
 
 so we can write 
@@ -48,7 +50,7 @@ Answer (8) which is derived is also divisible by d=4. so m-n (8) is also divisib
 
 hence we can say that if d divides m and n, then d also divides m-n as well.
 
-since conclusion, then gcd(m,n) = gcd(n, m-n).
+since conclusion, then gcd(m,n) = gcd(n, m-n). # This is the heart of Euclid's Algorithm.
 
 Consider gcd(m,n) with m>n. if n divides m, return n.
 
@@ -74,7 +76,7 @@ def gcd(m,n):
 
 print(gcd(20,12))
 
-# Euclid’s algorithm, again
+# Euclid’s algorithm, again - Iteration Version
 
 def gcd(m,n):
 
@@ -105,6 +107,40 @@ Even better
 
     It follows that r = cd, so d divides r as well 
 
+    Ex:
+
+    Subtracting 20-12=8 Why subtract only once? Use remainder directly.
+
+    20÷12 Quotient=1 Remainder=8
+
+    Python 20%12 Output 8, Same answer.
+
+    Example 100 and 30
+
+        Old method
+
+        100-30=70
+
+        Still 70>30 Need another subtraction
+
+        70-30=40
+
+        40-30=10
+
+        Three operations.
+
+    New method
+
+        100%30=10
+
+    Only one operation. Much faster.
+
+New Formula
+
+    Instead of gcd(m,n) -> gcd(n,m-n) Use gcd(m,n) -> gcd(n,m%n)
+
+    This is the real Euclid Algorithm.
+
 '''
 
 '''
@@ -130,7 +166,7 @@ def gcd(m,n):
     else:
         return(gcd(n,m%n)) # m%n < n, always!
     
-# Euclid’s algorithm, revisited
+# Euclid’s algorithm, revisited # Iteration Version
 
     def gcd(m,n):
         if m < n: # Assume m >= n
@@ -151,5 +187,17 @@ Efficiency
     If m is 1 billion (109), the naive algorithm takes
     billions of steps, but this algorithm takes tens of
     steps
+
+'''
+
+'''
+
+Summary
+
+    Naive GCD: Find all common factors → Time Complexity: O(n).
+
+    Euclid (Subtraction): Replace gcd(m,n) with gcd(n, m-n) repeatedly.
+
+    Euclid (Modulo): Replace gcd(m,n) with gcd(n, m % n) repeatedly.
 
 '''
