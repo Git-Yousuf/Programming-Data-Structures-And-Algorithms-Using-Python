@@ -192,7 +192,7 @@ Efficiency
 
 '''
 
-Summary
+Summary:
 
     Naive GCD: Find all common factors → Time Complexity: O(n).
 

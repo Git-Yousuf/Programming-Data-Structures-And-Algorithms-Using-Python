@@ -135,7 +135,7 @@ A new kind of repetition
 
 '''
 
-Summary
+Summary:
 
     With a little thought, we have dramatically
     simplified our naive algorithm

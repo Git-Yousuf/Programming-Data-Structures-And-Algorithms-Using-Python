@@ -132,9 +132,9 @@ Important Poimts:
 
 Time Complexity:
 
-Factors of m find panna → O(m)
-Factors of n find panna → O(n)
-Common factors → O(m × n) Worst Case
+        Factors of m find panna → O(m)
+        Factors of n find panna → O(n)
+        Common factors → O(m × n) Worst Case
 
 So this is a basic or brute force approach. We can do better than this. We can use Euclid's algorithm to find gcd(m,n) in O(log(n)) time.
 
